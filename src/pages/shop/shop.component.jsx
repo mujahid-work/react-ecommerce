@@ -1,12 +1,12 @@
 import React from 'react';
-import Shop_Data from './shops.data';
-import Collections from '../../components/collection/collection.component'
+import Shop_Data from './shop.data';
+import Collection from '../../components/collection/collection.component'
 
 class ShopPage extends React.Component {
 
-    constructor(props){
+    constructor(){
 
-        super(props);
+        super();
 
         this.state = {
             collections: Shop_Data
@@ -20,7 +20,7 @@ class ShopPage extends React.Component {
             <div className="shop-page">
                 {
                     collections.map(({id, ...otherCollectionProps}) => (
-                        <Collections key={id} {...otherCollectionProps} />
+                        <Collection key={id} {...otherCollectionProps} />
                     ))
                 }
                 

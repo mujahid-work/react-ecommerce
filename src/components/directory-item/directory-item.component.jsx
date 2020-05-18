@@ -2,7 +2,7 @@ import React from 'react';
 import './directory-item.styles.scss';
 import {withRouter} from 'react-router-dom';
 
-const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => (
+const DirectoryItem = ({ title, imageUrl, size, linkUrl, history, match }) => (
 
     <div 
         className={`${size} menu-item`}
@@ -21,4 +21,4 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => (
     </div>
 )
 
-export default withRouter(MenuItem);
+export default withRouter(DirectoryItem);
