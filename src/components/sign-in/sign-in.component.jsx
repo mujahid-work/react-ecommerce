@@ -1,5 +1,5 @@
 import React from 'react';
-import './sign-in.styles.scss';
+import {SignInContainer,SignInTitleContainer,ButtonsContainer} from './sign-in.styles';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
@@ -45,8 +45,8 @@ class SignIn extends React.Component {
 
         return (
 
-            <div className="sign-in">
-                <h2 className="title"> I already have an account </h2>
+            <SignInContainer>
+                <SignInTitleContainer> I already have an account </SignInTitleContainer>
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
@@ -68,15 +68,15 @@ class SignIn extends React.Component {
                         required
                     />
 
-                    <div className="buttons">
+                    <ButtonsContainer>
                         <CustomButton type="submit">Sign In</CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
                             {' '}
                             SignIn With Google {' '}
                         </CustomButton>
-                    </div>
+                    </ButtonsContainer>
                 </form>
-            </div>
+            </SignInContainer>
         )
     }
 }
