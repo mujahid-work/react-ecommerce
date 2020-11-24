@@ -15,18 +15,21 @@ import Header from "./components/header/header.component";
 import {
   auth,
   createUserDoc,
-  addCollectionAndDocuments,
+  // addCollectionAndDocuments,
 } from "./firebase/firebase.utils";
 
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
-import { selectCollectionForPreview } from "./redux/shop/shop.selector";
+// import { selectCollectionForPreview } from "./redux/shop/shop.selector";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser, collectionArray } = this.props;
+    const {
+      setCurrentUser,
+      // collectionArray
+    } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
